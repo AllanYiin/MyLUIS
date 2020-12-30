@@ -1,0 +1,243 @@
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #fafafa;
+    color: #787878;
+}
+body > h1 {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 2em;
+    color: #673AB7;
+    position: relative;
+    margin-top: 40px;
+    padding-bottom: 15px;
+    font-weight: 300;
+}
+body > h1::after {
+    content: "";
+    height: 2px;
+    background-color: rgba(103, 58, 183, 0.2);
+    width: 160px;
+    left: 50%;
+    bottom: -18px;
+    transform: translateX(-50%);
+    position: absolute;
+}
+body > h1::before {
+    content: "›";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #DC22FF;
+    left: 50%;
+    margin-left: -8px;
+    transform: rotate(90deg);
+    box-shadow: 0 0 0 4px rgba(103, 58, 183, 0.2);
+    bottom: -25px;
+    font-size: 0.7em;
+    text-indent: 0px;
+    color: #fff;
+    line-height: 12px;
+    z-index: 9;
+}
+.timeline {
+    padding: 0px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.timeline > .timeline-item {
+    display: flex;
+    align-items: flex-start;
+}
+.timeline > .timeline-item > div {
+    flex: 1;
+    padding: 20px 40px;
+}
+.timeline > .timeline-item > div:last-child {
+    text-align: left;
+    padding-bottom: 40px !important;
+}
+.timeline > .timeline-item > div:first-child::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #DC22FF;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 4px rgba(103, 58, 183, 0.2);
+}
+.timeline > .timeline-item:nth-child(odd) > div:first-child {
+    text-align: right;
+    position: relative;
+}
+.timeline > .timeline-item:nth-child(odd) > div:first-child::after {
+    right: -17px;
+}
+.timeline > .timeline-item:nth-child(odd) > div:last-child {
+    text-align: left;
+    border-left: 2px solid #e0e0e0;
+}
+.timeline > .timeline-item:nth-child(odd) > .timeline-date > div {
+    margin-right: 0px;
+}
+.timeline > .timeline-item:nth-child(odd) > .timeline-date > img {
+    right: 11%;
+    left: inherit;
+}
+.timeline > .timeline-item:nth-child(odd) > .timeline-content > h2 {
+    text-align: left !important;
+}
+.timeline > .timeline-item:nth-child(odd) > .timeline-content > p > img {
+    right: 0;
+}
+.timeline > .timeline-item:nth-child(even) > div:first-child {
+    order: 2;
+    text-align: left;
+    position: relative;
+}
+.timeline > .timeline-item:nth-child(even) > div:first-child::after {
+    left: -1px;
+}
+.timeline > .timeline-item:nth-child(even) > div:last-child {
+    order: 1;
+    text-align: right;
+    border-right: 2px solid #e0e0e0;
+}
+.timeline > .timeline-item:nth-child(even) > .timeline-date > div {
+    margin-left: 0px;
+}
+.timeline > .timeline-item:nth-child(even) > .timeline-date > img {
+    left: 11%;
+    right: inherit;
+}
+.timeline > .timeline-item:nth-child(even) > .timeline-content > h2 {
+    text-align: right !important;
+}
+.timeline > .timeline-item:nth-child(even) > .timeline-content > p > img {
+    right: inherit;
+    left: 0;
+    transform-origin: bottom left;
+}
+.timeline > .timeline-item:nth-child(even) > .timeline-content > p > button {
+    left: inherit;
+    right: 15px;
+}
+.timeline > .timeline-item .timeline-date {
+    position: relative;
+}
+.timeline > .timeline-item .timeline-date > img {
+    position: absolute;
+    filter: grayscale(100%);
+    opacity: 0.06;
+    transform: scale(1.2);
+    transform-origin: center;
+    left: 11%;
+}
+.timeline > .timeline-item .timeline-date > div {
+    background-image: linear-gradient(to right, #673ab7, #813bcb, #9e38de, #bc32ef, #dc22ff);
+    box-shadow: 0 10px 15px rgba(103, 58, 183, 0.3);
+    border-radius: 50px;
+    color: #ffffff;
+    text-align: center;
+    max-width: max-content;
+    margin: auto;
+    padding: 10px 30px;
+}
+.timeline > .timeline-item .timeline-content .fa-icon {
+    font-size: 80px;
+}
+.timeline > .timeline-item .timeline-content > h2 {
+    color: #673AB7;
+    margin: 0px;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 7px;
+}
+.timeline > .timeline-item .timeline-content > h2 span {
+    color: #DC22FF;
+    font-weight: bold;
+    font-size: 0.6em;
+    letter-spacing: 2px;
+    margin-left: 5px;
+}
+.timeline > .timeline-item .timeline-content > p {
+    font-size: 0.9em;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(103, 58, 183, 0.08);
+    position: relative;
+    line-height: 25px;
+    padding-bottom: 60px;
+    min-height: 100px;
+}
+.timeline > .timeline-item .timeline-content > p > img {
+    width: 100px;
+    opacity: 0.05;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform-origin: bottom right;
+    transform: scale(1.8);
+}
+.timeline > .timeline-item .timeline-content > p > button {
+    background: no-repeat;
+    outline: none;
+    color: #673AB7;
+    border: none;
+    padding: 7px 15px;
+    position: absolute;
+    bottom: 15px;
+    border-radius: 30px;
+    left: 15px;
+    box-shadow: 0 0px 2px rgba(103, 58, 183, 0.1);
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    font-weight: normal;
+    transition: all 0.5s ease;
+}
+.timeline > .timeline-item .timeline-content > p > button:hover {
+    background: rgba(103, 58, 183, 0.7);
+    box-shadow: 0 5px 10px rgba(103, 58, 183, 0.1);
+    color: #ffffff;
+}
+@media (max-width: 767px) {
+    .timeline > .timeline-item {
+        flex-direction: column;
+        border-left: 2px solid #e0e0e0;
+    }
+    .timeline > .timeline-item .timeline-date > img {
+        display: none;
+    }
+    .timeline > .timeline-item > div {
+        border-width: 0px !important;
+        text-align: left !important;
+        order: unset !important;
+    }
+    .timeline > .timeline-item > div::after {
+        left: 0% !important;
+    }
+    .timeline > .timeline-item:nth-child(odd) > .timeline-content > h2 {
+        text-align: left !important;
+    }
+    .timeline > .timeline-item:nth-child(even) > .timeline-content > h2 {
+        text-align: left !important;
+    }
+    .timeline > .timeline-item:nth-child(even) > .timeline-content > p > img {
+        right: 0;
+        left: inherit;
+        transform-origin: bottom right;
+    }
+    .timeline > .timeline-item:nth-child(even) > .timeline-content > p > button {
+        left: 15px;
+        right: inherit;
+    }
+}
