@@ -167,8 +167,37 @@
             $('.chat-header-option').removeClass('hide');
             add_greeting();
 
-           
 
+           @*加入enter 鍵偵測後續動作*@
+           $('#input_text').on('keyup', function (e) {
+              if (e.keyCode == 13) {
+                 var input_sentence=$('#input_text').val();
+                  var mydata=JSON.stringify({sentence:input_sentence});
+            
+                  add_chat(input_sentence);
+                  $('#input_text').val("");
+
+
+                  $.ajax({  
+                    url: '/home/InferIntents/',  
+                    type: 'POST',  
+                     data:input_sentence ,
+                     headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                     dataType: 'json',  
+                   success : function(data) {
+                        console.log(data);
+                        add_chat(JSON.stringify(data));
+                    },
+                    error: function (request, message, error) {  
+                      add_response("糟糕，我聽不太懂你的意思。"+ message+error);  
+                    }  
+                  });  
+              }
+            });
+
+            @*     點擊送出訊息後續動作*@
             $('#send_message').click(function (){
                   var input_sentence=$('#input_text').val();
                   var mydata=JSON.stringify({sentence:input_sentence});

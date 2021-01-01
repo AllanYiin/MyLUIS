@@ -117,15 +117,5 @@ namespace MyLUIS.Properties {
                 return ResourceManager.GetString("intent_list", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   查詢類型 System.Byte[] 的當地語系化資源。
-        /// </summary>
-        public static byte[] text_cnn {
-            get {
-                object obj = ResourceManager.GetObject("text_cnn", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }

@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="C:\Users\Allan\.nuget\packages\microsoft.ml.onnxruntime\1.6.0\build\netstandard1.1\..\..\runtimes\win-x64\native\onnxruntime.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="wwwroot\assets\embed.npz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
