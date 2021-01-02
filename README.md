@@ -7,6 +7,7 @@
 
 
 ## 使用方法
+- 意圖識別建模實作請參考「[洞悉你的意圖](https://github.com/AllanYiin/DeepBelief_Course5_Examples/tree/master/epoch802_%E6%B4%9E%E6%82%89%E4%BD%A0%E7%9A%84%E6%84%8F%E5%9C%96)」
 - 下載本專案(本專案使用NetCore 3.0.100)
 - 復原相關nuget package:
 	+ JiebaAspNetCore.Segmenter
