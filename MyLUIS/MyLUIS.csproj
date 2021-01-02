@@ -16,6 +16,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\LuisController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\assets\charlist.txt" />
     <Content Remove="wwwroot\assets\embed.npy" />
     <Content Remove="wwwroot\assets\embed.npz" />

@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{68244A1E-1340-4268-9A1C-07B738A59671}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		打造自己的繁體中文LUIS服務.pptx = 打造自己的繁體中文LUIS服務.pptx
 	EndProjectSection
 EndProject
 Global

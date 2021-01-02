@@ -54,8 +54,6 @@ namespace MyLUIS
             //如果不行則改成cpu
  
                 luis_session = new InferenceSession(model_path);
-
-
                 inputName = luis_session.InputMetadata.Keys.ToList()[0];
             
         
