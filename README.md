@@ -7,6 +7,19 @@
 
 
 ## 使用方法
-- 下載本專案
-- 請先至[這裡](https://1drv.ms/u/s!AsqOV38qroofiZuLXJdFwSXKpaTPBs4?e=cZKvhq)下載相關資源(意圖清單、詞彙清單、字向量)與模型檔案，主要是因為github有單個檔案大小上限。下載後解壓縮。請將解壓縮後資料夾中的「asset」資料夾複製至專案資料夾的「wwwroot」之下，而「text_cnn.onnx」則複製至專案中的「Models」中，並且將此模型物件的「複製到輸出目錄」的屬性設為「永遠複製」
+- 下載本專案(本專案使用NetCore 3.0.100)
+- 復原相關nuget package:
+	+ JiebaAspNetCore.Segmenter
+    + Microsoft.AspNetCore.Mvc.NewtonsoftJson
+    + Microsoft.ML.OnnxRuntime
+    + Newtonsoft.Json
+    + NumSharp
+    + System.Numerics.Tensors
+    + TraditionalChineseToSimplifiedConverter
+    
+- 請先至[這裡](https://1drv.ms/u/s!AsqOV38qroofiZuLXJdFwSXKpaTPBs4?e=cZKvhq)下載相關模型檔案，主要是因為github有單個檔案25MB大小上限。下載後請將「text_cnn.onnx」則複製至專案中的「Models」中，並且將此模型物件的「複製到輸出目錄」的屬性設為「永遠複製」
+![File2](file2.png)
+
+- 建置後執行偵錯即可測試聊天機器人與語意理解相關功能。
+![File3](file3.png)
 
