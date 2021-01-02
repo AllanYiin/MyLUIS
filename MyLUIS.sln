@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		file.png = file.png
 		README.md = README.md
+		打造自己的繁體中文LUIS服務.pdf = 打造自己的繁體中文LUIS服務.pdf
 		打造自己的繁體中文LUIS服務.pptx = 打造自己的繁體中文LUIS服務.pptx
 	EndProjectSection
 EndProject
