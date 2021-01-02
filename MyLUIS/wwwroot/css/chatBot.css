@@ -3,7 +3,7 @@
     bottom: 68px;
     left: 20px;
     z-index: 9999;
-    width: 350px;
+    width: 500px;
     height: auto;
     background: #fff;
     box-sizing: border-box;
@@ -40,42 +40,8 @@
 .chat-screen .chat-header .chat-header-option .dropdown .dropdown-toggle svg {
     color: #fff;
 }
-.chat-screen .chat-mail {
-    padding: 30px;
-    display: block;
-}
-.chat-screen .chat-mail input.form-control {
-    border-radius: 30px;
-    border: 1px solid #e1e1e1;
-    color: #3b3f5c;
-    font-size: 14px;
-    padding: 0.55rem 1.25rem;
-}
-.chat-screen .chat-mail input.form-control:focus {
-    box-shadow: none;
-    border: 1px solid #add5fc;
-}
-.chat-screen .chat-mail .select2 .selection .select2-selection .select2-selection__rendered {
-    border-radius: 30px;
-    border: 1px solid #e1e1e1;
-    height: calc(1.28em + 1.28rem + 2px);
-    padding: 9px 20px;
-    font-size: 14px;
-}
-.chat-screen .chat-mail .select2.select2-container--open .selection .select2-selection {
-    box-shadow: none;
-    border-radius: 30px;
-}
-.chat-screen .chat-mail button {
-    background-image: linear-gradient(to right, #673ab7, #813bcb, #9e38de, #bc32ef, #dc22ff);
-    border: none;
-    padding: 0.58rem 1.25rem;
-    transition: transform 0.5s ease;
-}
-.chat-screen .chat-mail .form-group {
-    margin-bottom: 1.5rem;
-}
-    .chat-screen .chat-body {
+
+.chat-screen .chat-body {
         padding: 25px;
         display: inline-block;
         min-height: 80vh;
@@ -98,24 +64,26 @@
     font-size: 12px;
     padding: 10px 15px;
     box-shadow: none;
-    display: inline-block;
+    display: block;
     clear: both;
     margin-bottom: 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.02);
 }
-.chat-screen .chat-body .chat-bubble.you {
-    background-image: linear-gradient(to right, #673ab7, #813bcb, #9e38de, #bc32ef, #dc22ff);
-    color: #fff;
-    border-radius: 0 15px 15px 15px;
-    align-self: flex-start;
-    display: table;
-}
+    .chat-screen .chat-body .chat-bubble.you {
+        background-image: linear-gradient(to right, #673ab7, #813bcb, #9e38de, #bc32ef, #dc22ff);
+        color: #fff;
+        border-radius: 0 15px 15px 15px;
+        align-self: flex-start;
+        max-width: 350px;
+        display: table;
+    }
 .chat-screen .chat-body .chat-bubble.me {
     background-image: linear-gradient(to right, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
     color: #888ea8;
     border-radius: 15px 0px 15px 15px;
     float: right;
     align-self: flex-end;
+    max-width: 350px;
     display: table;
 }
 .chat-screen .chat-input {
