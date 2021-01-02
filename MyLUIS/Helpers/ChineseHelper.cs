@@ -46,7 +46,10 @@ namespace MyLUIS
             return r;
         }
 
-        public static string ToProportional(string InputString)
+        //全形字元的unicode編碼從65281 ~65374 （十六進位制 0xFF01 ~ 0xFF5E），
+        //對應到半形字元unicode編碼從33 ~126 （十六進位制 0x21~ 0x7E）
+        //空格比較特殊，全形為 12288（0x3000），半形為 32（0x20）
+        public static string ToHalfWidth(string InputString)
         {
             string result = "";
             for (int i = 0; i < InputString.Length; i++)
@@ -68,7 +71,27 @@ namespace MyLUIS
             return result;
         }
 
-
+        public static string ToFullWidth(string InputString)
+        {
+            string result = "";
+            for (int i = 0; i < InputString.Length; i++)
+            {
+                int stringcode = (int)InputString[i];
+                if (stringcode+65248 >= 65281 && stringcode < 65375)
+                {
+                    result += Microsoft.VisualBasic.Strings.Chr(stringcode +65248);
+                }
+                else if (stringcode == 32)
+                {
+                    result += Microsoft.VisualBasic.Strings.Chr(12288);
+                }
+                else
+                {
+                    result += InputString[i];
+                }
+            }
+            return result;
+        }
 
     }
 }

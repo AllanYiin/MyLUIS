@@ -43,7 +43,11 @@ namespace MyLUIS.Controllers
             DateTime starttime = DateTime.Now;
             SemanticAnaysis sa = new SemanticAnaysis(sentence1);
 
-            //將繁體中文轉成簡體中文後分詞
+            //轉半形與繁體
+            sentence1 = ChineseHelper.ToHalfWidth(sentence1);
+            sentence1 = ChineseHelper.ToTraditionalChinese(sentence1);
+
+            //將繁體中文轉成簡體中文後分詞(配合結巴，但是效果很爛未直接使用，僅教學示範)
             sa.WordSegs=seg.Cut(ChineseHelper.ToSimplifiedChinese(sentence1)).ToList();
             int pos = 0;
             for (int i = 0; i < sa.WordSegs.Count(); i++)
