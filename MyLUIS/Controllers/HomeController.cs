@@ -18,6 +18,8 @@ namespace MyLUIS.Controllers
         {
             _logger = logger;
             seg = new PosSegmenter(new JiebaNet.Segmenter.JiebaSegmenter());
+            //pre-load
+            var result=this.InferIntents("今天台積電股價多少?");
         }
 
         public IActionResult Index()
@@ -39,9 +41,18 @@ namespace MyLUIS.Controllers
         [HttpPost("home/InferIntents")]
         public IActionResult InferIntents( string sentence)
         {
-            string sentence1 = this.Request.Form.Keys.ToList().FirstOrDefault();
-            DateTime starttime = DateTime.Now;
+            string sentence1 = string.Empty;
+            if (sentence != null)
+            {
+                sentence1 = sentence;
+            }
+            else
+            {
+                sentence1 = this.Request.Form.Keys.ToList().FirstOrDefault();
+            }
             SemanticAnaysis sa = new SemanticAnaysis(sentence1);
+
+            DateTime starttime = DateTime.Now;
 
             //轉半形與繁體
             sentence1 = ChineseHelper.ToHalfWidth(sentence1);

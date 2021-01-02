@@ -67,8 +67,11 @@ namespace MyLUIS
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            //初始化相關物件
             InferHelper.SettingSession("Models/text_cnn.onnx");
             InferHelper.Prepare_mapping(Properties.Resources.intent_list);
+            TensorHelper.Prepare_Embedding();
+            TensorHelper.chars_list= Properties.Resources.charlist.ToCharArray();
         }
     }
 }

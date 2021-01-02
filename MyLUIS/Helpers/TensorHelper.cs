@@ -26,12 +26,14 @@ namespace MyLUIS
                 return -1;
             }
         }
+        public static void Prepare_Embedding()
+        {
+            char_embedding= np.Load<float[,]>(Properties.Resources.embed);
+        }
+
         public static List<NamedOnnxValue> StringToEmbeddedTensor(string sentence)
         {
-            if (char_embedding == null)
-            {
-                char_embedding = np.Load<float[,]>(Properties.Resources.embed);
-            }
+         
             var container = new List<NamedOnnxValue>();
             NDArray features = np.zeros((256,128));
             for (int i = 0; i < sentence.Length; i++)
