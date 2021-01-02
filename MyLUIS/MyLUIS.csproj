@@ -20,12 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\assets\charlist.txt" />
-    <Content Remove="wwwroot\assets\embed.npy" />
-    <Content Remove="wwwroot\assets\embed.npz" />
-    <Content Remove="wwwroot\assets\embed.txt" />
-    <Content Remove="wwwroot\assets\intent_list.txt" />
-    <Content Remove="wwwroot\assets\text_cnn.onnx" />
     <Content Remove="wwwroot\css\timeline.css" />
   </ItemGroup>
 

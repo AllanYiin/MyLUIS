@@ -55,23 +55,28 @@ namespace MyLUIS.Controllers
             DateTime starttime = DateTime.Now;
 
             //轉半形與繁體
-            sentence1 = ChineseHelper.ToHalfWidth(sentence1);
-            sentence1 = ChineseHelper.ToTraditionalChinese(sentence1);
+            string sentence2 = ChineseHelper.ToHalfWidth(sentence1);
+            sentence2 = ChineseHelper.ToTraditionalChinese(sentence2);
+            sa.PreprocessedString = sentence2;
+            //將繁體中文轉成簡體中文後分詞(配合結巴，但是分詞效果很爛，僅用於實體識別教學示範)
+            sa.WordSegs=seg.Cut(ChineseHelper.ToSimplifiedChinese(sentence2)).ToList();
 
-            //將繁體中文轉成簡體中文後分詞(配合結巴，但是效果很爛未直接使用，僅教學示範)
-            sa.WordSegs=seg.Cut(ChineseHelper.ToSimplifiedChinese(sentence1)).ToList();
+            sa.WordSegs.Where(x => x.Flag == "nr" || x.Flag == "ns" || x.Flag == "t").ToList().ForEach(x =>
+                   sa.PredictEntities.Add(new PredictEntity() { EntityString = x.Word, EntityType = x.Flag == "nr" ? entity_type.人名 : x.Flag == "ns" ? entity_type.地點 : entity_type.時間 })
+               );
+
             int pos = 0;
             for (int i = 0; i < sa.WordSegs.Count(); i++)
             {
                 var seg = sa.WordSegs[i];
-                seg.Word = sentence1.Substring(pos, seg.Word.Length);
+                seg.Word = sentence2.Substring(pos, seg.Word.Length);
                 pos += seg.Word.Length;
             }
 
             try
             {
 
-                sa.PredictIntents = InferHelper.Sentence2Intent(sentence1);
+                sa.PredictIntents = InferHelper.Sentence2Intent(sentence2);
                 sa.ProcessTime =( DateTime.Now - starttime).TotalMilliseconds/1000.0;
 
 

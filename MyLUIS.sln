@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLUIS", "MyLUIS\MyLUIS.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{68244A1E-1340-4268-9A1C-07B738A59671}"
 	ProjectSection(SolutionItems) = preProject
+		file.png = file.png
 		README.md = README.md
 		打造自己的繁體中文LUIS服務.pptx = 打造自己的繁體中文LUIS服務.pptx
 	EndProjectSection

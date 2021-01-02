@@ -72,6 +72,11 @@ namespace MyLUIS
             InferHelper.Prepare_mapping(Properties.Resources.intent_list);
             TensorHelper.Prepare_Embedding();
             TensorHelper.chars_list= Properties.Resources.charlist.ToCharArray();
+
+            //天氣能力
+            string weatherJson = AbilityHelper.HttpGet(AbilityHelper.weather_url);
+            var weather=Newtonsoft.Json.JsonConvert.DeserializeObject(weatherJson);
+            Console.Write(weatherJson);
         }
     }
 }

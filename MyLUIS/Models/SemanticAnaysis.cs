@@ -12,7 +12,9 @@ namespace MyLUIS.Models
     {
         private string input_sentence;
         public SemanticAnaysis()
-        { 
+        {
+            PredictIntents = new List<PredictIntent>();
+            PredictEntities = new List<PredictEntity>();
         }
         public SemanticAnaysis(string sentence)
         {
@@ -61,6 +63,13 @@ namespace MyLUIS.Models
         }
 
         public entity_type EntityType { get; set; }
+        public string EntityDesc
+        {
+            get
+            {
+                return EntityType.ToString();
+            }
+        }
         public string  EntityString { get; set; }
         public float Probability { get; set; }
         
