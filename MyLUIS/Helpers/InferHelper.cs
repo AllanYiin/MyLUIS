@@ -81,6 +81,11 @@ namespace MyLUIS
             {
                 int idx = top_results.GetData(new int[] { i });
                 float probs = results.GetData(new int[] {idx});
+                //top1機率過低判斷為意圖清單之外
+                if(i==-1 && probs<0.6)
+                {
+                    final_result.Add(new PredictIntent() { Intent = (intent)(-1), Ordinal = -i, Probability = 1.2f-probs });
+                }
                 final_result.Add(new PredictIntent() { Intent = (intent)idx, Ordinal =- i, Probability = probs });
             }
             return final_result;
