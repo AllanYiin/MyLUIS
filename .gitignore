@@ -341,5 +341,5 @@ healthchecksdb
 
 # Machine learning
 *.onnx
-*.npy
+#*.npy
 /打造自己的繁體中文LUIS服務.pptx
